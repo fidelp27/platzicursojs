@@ -222,6 +222,7 @@ body {
     height: 240px;
     border-radius: 20px;
     object-fit: cover;
+    cursor: pointer;
 }
 
 .product-info {
@@ -328,6 +329,7 @@ body {
     position: absolute;
     top: 60px;
     background-color: var(--white);
+    width: 100%;
 }
 
 .mobile-menu ul {
@@ -432,7 +434,7 @@ body {
     display: grid;
     grid-template-columns: auto 1fr auto auto;
     gap: 16px;
-    margin-bottom: 24px;
+    margin-bottom: 10px;
     align-items: center;
 }
 
@@ -590,7 +592,7 @@ nav {
 /* Prduct detail */
 .product-detail {
     width: 360px;
-    padding: 0 24px;
+    padding: 0 24px 24px 0;
     position: absolute;
     right: 0;
     background-color: var(--white);
@@ -599,8 +601,8 @@ nav {
 .product-detail-close {
     background-color: var(--white);
     position: absolute;
-    top: 35px;
-    left: 35px;
+    top: 15px;
+    left: 15px;
     z-index: 1;
     border-radius: 50%;
     display: flex;
@@ -672,6 +674,7 @@ nav {
     gap: 16px;
     margin-bottom: 24px;
     align-items: center;
+   
 }
 
 .title-container-shopping-cart {
@@ -687,6 +690,3 @@ nav {
     font-size: var(--lg);
 }
 
-.product-detail-shopping-cart {
-    margin: 24px 0 0;
-}
