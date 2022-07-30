@@ -1,0 +1,25 @@
+{
+  "name": "platzicursojs",
+  "version": "1.0.0",
+  "description": "Curso practico JS platzi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/fidelp27/platzicursojs.git"
+  },
+  "keywords": [
+    "javascript",
+    "html",
+    "css"
+  ],
+  "author": "Fidel Parabacuto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fidelp27/platzicursojs/issues"
+  },
+  "homepage": "https://github.com/fidelp27/platzicursojs#readme",
+  "type": "module"
+}
