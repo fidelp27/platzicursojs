@@ -4,7 +4,7 @@
   "description": "Curso practico JS platzi",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "gh-pages -d"
   },
   "repository": {
     "type": "git",
@@ -21,5 +21,8 @@
     "url": "https://github.com/fidelp27/platzicursojs/issues"
   },
   "homepage": "https://github.com/fidelp27/platzicursojs#readme",
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
+  }
 }
