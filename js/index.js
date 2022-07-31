@@ -46,14 +46,14 @@ closeProductDetail.addEventListener('click', () => {
 
 // index products
 
-function renderPRoducts(arr) {
+function renderProducts(arr) {
   for (let product of arr) {
     const productCard = document.createElement('div');
     productCard.classList.add('product-card');
 
     const productImg = document.createElement('img');
-    productImg.setAttribute('src', product.image);
-    productImg.setAttribute('alt', product.name);
+    productImg.setAttribute('src', product.images[0]);
+    productImg.setAttribute('alt', product.title);
     productImg.addEventListener('click', () =>
       openAsideProductDetail(
         asideProductDetail,
@@ -70,7 +70,7 @@ function renderPRoducts(arr) {
     const productPrice = document.createElement('p');
     productPrice.innerText = `$${product.price}`;
     const productName = document.createElement('p');
-    productName.innerText = `${product.name}`;
+    productName.innerText = `${product.title}`;
 
     productInfoDiv.appendChild(productPrice);
     productInfoDiv.appendChild(productName);
@@ -87,4 +87,16 @@ function renderPRoducts(arr) {
     cardContainer.append(productCard);
   }
 }
-renderPRoducts(products);
+
+const URL = 'https://api.escuelajs.co/api/v1/products?offset=0&limit=75';
+
+async function fetchData(uri) {
+  try {
+    const response = await fetch(uri);
+    const data = await response.json();
+    renderProducts(data);
+  } catch (error) {
+    console.log(error);
+  }
+}
+fetchData(URL);
