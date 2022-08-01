@@ -1,5 +1,5 @@
 import products from '../data.js';
-
+import { registerImage } from './lazy.js';
 const menuEmail = document.querySelector('.navbar-email');
 const desktopMenu = document.querySelector('.desktop-menu');
 const burgerMenuIcon = document.querySelector('.menu-hamburger');
@@ -50,21 +50,25 @@ function renderProducts(arr) {
   for (let product of arr) {
     const productCard = document.createElement('div');
     productCard.classList.add('product-card');
-
+    productCard.addEventListener('click', (e) => {
+      console.log(e.currentTarget);
+    });
     const productImg = document.createElement('img');
-    productImg.setAttribute(
-      'src',
-      product.images[0] ? product.images[0] : 'https://i.imgur.com/8rv6TNy.jpg'
-    );
+
+    productImg.dataset.src = product.images[0].startsWith('http')
+      ? product.images[0]
+      : 'https://i.imgur.com/8rv6TNy.jpg';
+
     productImg.setAttribute('alt', product.title);
-    productImg.addEventListener('click', () =>
+    productImg.classList.add('bg-image');
+    productImg.addEventListener('click', () => {
       openAsideProductDetail(
         asideProductDetail,
         desktopMenu,
         asideCartList,
         mobileMenu
-      )
-    );
+      );
+    });
 
     const productInfo = document.createElement('div');
     productInfo.classList.add('product-info');
@@ -86,6 +90,7 @@ function renderProducts(arr) {
     productInfoFigure.appendChild(productImgCart);
     productInfo.append(productInfoDiv, productInfoFigure);
     productCard.append(productImg, productInfo);
+    registerImage(productImg);
 
     cardContainer.append(productCard);
   }
@@ -98,6 +103,7 @@ async function fetchData(uri) {
     const response = await fetch(uri);
     const data = await response.json();
     renderProducts(data);
+    console.log(data);
   } catch (error) {
     console.log(error);
   }

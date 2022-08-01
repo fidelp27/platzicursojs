@@ -13,7 +13,9 @@
 * {
     box-sizing: border-box;
 }
-
+.bg-image{
+    background-color: var(--very-light-pink);
+}
 body {
     font-family: 'Quicksand', sans-serif;
     margin: 0;
