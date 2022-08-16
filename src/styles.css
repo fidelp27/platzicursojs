@@ -20,9 +20,7 @@ body {
     font-family: 'Quicksand', sans-serif;
     margin: 0;
 }
-.inactive{
-    display: none;
-}
+
 
 .login {
     width: 100%;
@@ -400,6 +398,7 @@ body {
 .my-order-content {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .order {
@@ -670,12 +669,20 @@ nav {
 }
 
 /* shopping-cart */
+.product-detail-shopping-cart{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 1rem;
+}
+
 .shopping-cart-container {
     display: grid;
-    grid-template-columns: auto 1fr auto auto auto;
     gap: 16px;
     margin-bottom: 24px;
+    padding: 0 1rem;
     align-items: center;
+    justify-content: center;
    
 }
 
@@ -691,4 +698,11 @@ nav {
 .title-shopping-cart {
     font-size: var(--lg);
 }
+.button-checkout{
+    margin-bottom: 1rem;
 
+}
+
+.inactive{
+    display: none;
+}

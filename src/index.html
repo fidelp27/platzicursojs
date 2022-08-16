@@ -44,7 +44,7 @@
               src="./assets/icons/icon_shopping_cart.svg"
               alt="ahopping-cart"
             />
-            <div>2</div>
+            <div class="total-items">0</div>
           </li>
         </ul>
       </div>
@@ -106,6 +106,7 @@
         </ul>
       </div>
     </nav>
+    <!-- Shopping cart -->
     <aside class="product-detail product-detail-shopping-cart inactive">
       <div class="title-container-shopping-cart">
         <img
@@ -115,44 +116,25 @@
         />
         <p class="title-shopping-cart">Shopping cart</p>
       </div>
-      <div class="my-order-content"></div>
-      <div class="shopping-cart shopping-cart-container">
-        <figure>
-          <img
-            src="https://images.pexels.com/photos/1595476/pexels-photo-1595476.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          />
-        </figure>
-        <p>Bike</p>
-        <p>$30,00</p>
-        <img src="./assets/icons/icon_close.png" alt="close" />
-      </div>
-      <div class="shopping-cart shopping-cart-container">
-        <figure>
-          <img
-            src="https://images.pexels.com/photos/1595476/pexels-photo-1595476.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          />
-        </figure>
-        <p>Bike</p>
-        <p>$30,00</p>
-        <img src="./assets/icons/icon_close.png" alt="close" />
-      </div>
-      <div class="shopping-cart shopping-cart-container">
-        <figure>
-          <img
-            src="https://images.pexels.com/photos/1595476/pexels-photo-1595476.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          />
-        </figure>
-        <p>Bike</p>
-        <p>$30,00</p>
-        <img src="./assets/icons/icon_close.png" alt="close" />
+      <div class="my-order-content">
+        <!-- <div class="shopping-cart shopping-cart-container">
+          <figure>
+            <img
+              src="https://images.pexels.com/photos/1595476/pexels-photo-1595476.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            />
+          </figure>
+          <p>Bike</p>
+          <p>$30,00</p>
+          <img src="./assets/icons/icon_close.png" alt="close" />
+        </div> -->
       </div>
       <div class="order">
         <p>
           <span>Total</span>
         </p>
-        <p>$560.00</p>
+        <p class="total">$0</p>
       </div>
-      <button class="primary-button">Checkout</button>
+      <button class="primary-button button-checkout">Checkout</button>
     </aside>
 
     <!-- product detail -->

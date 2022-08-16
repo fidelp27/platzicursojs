@@ -1,13 +1,11 @@
-const total = 0;
-
 // recibe un entry y se pasa la propuedad isIntersecting para saber si está dentro de la pantalla
 const isIntersecting = (entry) => entry.isIntersecting;
 
 const loadImage = (entry) => {
   //Obtenemos el nodo de lo que estamos viendo y se lo pasamos al unobserve para que deje de observar ese elemento en específico
   const imageCard = entry.target;
-  const url = imageCard.dataset.src;
-  imageCard.src = url;
+  const url = imageCard.dataset.src; //Traigo la url desde el atributo creado
+  imageCard.src = url; //asigno la url a la imagen
 
   //Cada vez que se vea la imagen, se le pide que deje de hacerlo para no cargar la misma acción cada vez que hago scroll
   observer.unobserve(imageCard);
