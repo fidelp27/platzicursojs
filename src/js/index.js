@@ -59,17 +59,18 @@ function renderProducts(arr) {
     productImg.dataset.src = product.images[0].startsWith('http')
       ? product.images[0]
       : 'https://i.imgur.com/8rv6TNy.jpg';
-
+    productImg.dataset.description = product.description;
     productImg.setAttribute('alt', product.title);
 
     productImg.classList.add('bg-image');
-    productImg.addEventListener('click', () => {
+    productImg.addEventListener('click', (e) => {
       openAsideProductDetail(
         asideProductDetail,
         desktopMenu,
         asideCartList,
         mobileMenu
-      );
+      ),
+        showProductDetail(e);
     });
 
     const productInfo = document.createElement('div');
@@ -150,7 +151,7 @@ function renderProductToShoppingCart(array) {
     );
     const figure = document.createElement('figure');
     const productImage = document.createElement('img');
-    productImage.setAttribute('src', elem.imgSrc);
+    productImage.setAttribute('src', elem.img);
     productImage.setAttribute('alt', elem.title);
     figure.appendChild(productImage);
 
@@ -179,6 +180,7 @@ function renderProductToShoppingCart(array) {
   totalAmount(array);
   totalProductsCart(array);
   deleteProducts(array);
+  console.log(array);
 }
 
 function totalAmount(array) {
@@ -211,3 +213,36 @@ function deleteProducts(arr) {
   return;
 }
 // render product detail
+function showProductDetail(e) {
+  // get card data
+  const boton = e.target;
+  const item = boton.closest('.product-card');
+  const imgSrc = item.querySelector('img').getAttribute('src');
+  const title = item.querySelector('.product-name').textContent;
+  const price = item.querySelector('.product-price').textContent;
+  const description = item.querySelector('.product-card img');
+  const addProductButton = document.querySelector(
+    '.aside-product-detail button'
+  );
+
+  // change render info
+  const image = document.querySelector('.aside-product-detail .bg-image');
+  image.setAttribute('src', imgSrc);
+  image.setAttribute('alt', title);
+  const cardPrice = document.querySelector(
+    '.aside-product-detail .product-price'
+  );
+  cardPrice.textContent = price;
+  const cardTitle = document.querySelector(
+    '.aside-product-detail .product-name'
+  );
+  cardTitle.textContent = title;
+
+  const cardDescription = document.querySelector(
+    '.aside-product-detail .product-info-detail .detail-description'
+  );
+  cardDescription.textContent = description.dataset.description;
+
+  addProductButton.addEventListener('click', addCiclkedProduct);
+}
+console.log(arrayShoppingCartProducts);
